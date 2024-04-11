@@ -1,0 +1,28 @@
+.header{
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   box-shadow: 0px 0px 7px #000;
+   background-color: #fff;
+  z-index: 10;
+   .inner{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+       padding: 10px;
+   }
+   .nav{
+      .list{
+         display: flex;
+         gap: 24px;
+        
+         .li{
+            
+         }
+      }
+   }
+}
