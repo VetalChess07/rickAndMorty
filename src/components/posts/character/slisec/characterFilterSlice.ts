@@ -1,15 +1,19 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSelector, createSlice } from "@reduxjs/toolkit";
+import { RootState } from "src/redux/store";
 import { Character } from "src/utils/types/charactersType";
+
 
 
 type FilterCharacterState = {
   charactersFilterArr: Character[],
-  charactersFilterPage: number 
+  charactersFilterPage: number,
+  isFilteredCharacters: boolean
 }
 
 const initialState:FilterCharacterState = {
    charactersFilterArr: [],
-   charactersFilterPage: 1
+   charactersFilterPage: 1,
+   isFilteredCharacters: false
 };
 
 const characterFilterSlice = createSlice({
@@ -25,6 +29,8 @@ const characterFilterSlice = createSlice({
    
   },
 });
+
+export const selectCharacterFilter = (state:RootState)  => state.characterFilter
 
 export const {downloadCharacterFilter} = characterFilterSlice.actions;
 

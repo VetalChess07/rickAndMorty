@@ -5,4 +5,5 @@ export type PostsProps = {
    loadMorePosts: ()=> void
    page: number 
    isFetching: boolean
+   countPages: number
 }

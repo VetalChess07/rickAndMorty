@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FC } from 'react';
-import { useGetPostsQuery } from './slisec/postsApi';
+import { useGetPostsQuery } from './slisec/charactersApi';
 import { Link } from 'react-router-dom';
 import PostItem from '../../postItem/PostItem';
 import style from './style.module.scss';
@@ -8,7 +8,7 @@ import Loading from 'src/ui/loading/Loading';
 
 import { PostsProps } from './type';
 
-const Posts:FC<PostsProps> = ({loadMorePosts, page, posts, isFetching}) => {
+const Posts:FC<PostsProps> = ({loadMorePosts, page, posts, isFetching, countPages}) => {
 
 
   return (
@@ -25,7 +25,9 @@ const Posts:FC<PostsProps> = ({loadMorePosts, page, posts, isFetching}) => {
      
       <div className={style.posts__button_loadMore}>
         { isFetching ? 
-        <Loading/> :  
+        <Loading/> : 
+        countPages != page
+        &&
         <ButtonLoadingMore isDisabled={isFetching} onClick={loadMorePosts}>Load More</ButtonLoadingMore>
         }
       </div>

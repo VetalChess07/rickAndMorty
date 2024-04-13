@@ -13,7 +13,7 @@ const initialState:CharacterState = {
    page: 1
 };
 
-const characterSlice = createSlice({
+const charactersSlice = createSlice({
   name: "characters",
   initialState,
   reducers: {
@@ -27,7 +27,7 @@ const characterSlice = createSlice({
   },
 });
 
-export const {downloadCharacter} = characterSlice.actions;
+export const {downloadCharacter} = charactersSlice.actions;
 
-export default characterSlice.reducer;
+export default charactersSlice.reducer;
 

@@ -1,48 +1,91 @@
 import { useState,useEffect, FC } from 'react';
 import Posts from 'src/components/posts/character/Posts';
-import { useGetPostsQuery } from 'src/components/posts/character/slisec/postsApi'; 
+import { useGetPostsQuery } from 'src/components/posts/character/slisec/charactersApi'; 
 import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHook/reduxHook';
-import { downloadCharacter } from 'src/components/posts/character/slisec/postsSlice';
+import { downloadCharacter } from 'src/components/posts/character/slisec/charactersSlice';
 import { Character } from 'src/utils/types/charactersType';
 import { filterNewPosts } from 'src/utils/filterNewPosts';
-import { useGetPostsFilterQuery } from 'src/components/posts/character/slisec/postsFilter';
 import CharactersForm from './components/CharactersForm/CharactersForm';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
+import { SerializedError } from '@reduxjs/toolkit';
+
 
 const Characters:FC = () => {
+  
+  
   const {characters, page} = useAppSelector(state=> state.character)
+
+  const [isFilteredPosts, setIsFilteredPosts] = useState<boolean>(false)
+
   const dispatch = useAppDispatch()
   const [posts, setPosts] = useState<Character[]>([]);
+  const [countPages, setCountPages] = useState(1)
+  const [postsError, setPostsError] = useState<FetchBaseQueryError | null| unknown  |SerializedError>(null)
 
-  const { data, error, isLoading, isFetching } = useGetPostsQuery(page);
-  // const {data: dataFilter} = useGetPostsFilterQuery(species )
+  const [postsFilter, setPostsFilter] = useState<Character[]>([])
+
+  const { data, error, isFetching } = useGetPostsQuery(page);
   
+  const[acc, setAcc] = useState([])
 
   const loadMorePosts = () => {
     dispatch(downloadCharacter(data.results))
   };
 
+
   useEffect(() => {
+     
     if (data) {
+
+      setCountPages(data.info.pages)
       if (characters.length === 0) {
         setPosts(data.results);
+        setPostsFilter(data.results)
       } else {
+        console.log(postsFilter)
+        
+
         const newPosts = filterNewPosts(characters, data.results)
         setPosts([...characters, ...newPosts]);
+        setPostsFilter([...postsFilter, ])
+      
+     
       }
-    }
-
- 
+    }else{
+      if(error){
+         setPostsError(error.status)
+      }
+    } 
   }, [data, characters]);
+
+  console.log(`filt ${postsFilter.length}  post ${posts.length}  ${isFilteredPosts} ` )
 
 
   return (
     <>
-    <CharactersForm/>
-  
+    <CharactersForm 
+    setIsFilteredPosts={setIsFilteredPosts}
+     posts={posts}
+      postsFilter={postsFilter} 
+      setPostsFilter={setPostsFilter} 
+       setPosts={setPosts}/>
      {
       error
-       ? <h1>упс нет постов(</h1>
-       :  <Posts posts={posts} page={page} loadMorePosts={loadMorePosts}  isFetching={isFetching} />
+       ? <h1>упс что-то пошло не так <br />
+        <span>
+          Ошибка: {postsError.status}
+        </span>
+        </h1>
+       : posts.length === 0
+        ? <h1>У вас нет постов</h1>
+        : <Posts 
+        countPages={countPages} 
+        posts={isFilteredPosts ? postsFilter : posts} 
+        page={ page } 
+        loadMorePosts={ loadMorePosts}  
+        isFetching={isFetching} />
+       
+     
     }
   
     </>
