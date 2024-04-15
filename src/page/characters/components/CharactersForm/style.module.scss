@@ -1,0 +1,12 @@
+.form__filter{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+  gap: 10px;
+  margin-bottom: 61px;
+  position: sticky;
+  top: 70px;
+  z-index: 100;
+  background-color: #fff;
+  padding: 10px 0;
+}

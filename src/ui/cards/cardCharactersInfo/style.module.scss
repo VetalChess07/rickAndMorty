@@ -1,0 +1,110 @@
+.inner{
+   display: flex;
+   width: 100%;
+   justify-content: center;
+   position: relative;
+  
+}
+.goBack{
+   position: absolute;
+  left: 0;
+}
+
+.card__character{
+   width: 100%;
+   max-width: 846px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   gap: 42px;
+   .card__header{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .avatar{
+         width: 300px;
+         height: 300px;
+         border: 5px solid rgba(242, 242, 247, 1);
+      }
+      .name{
+         font-weight: 400;
+         font-size: 48px;
+         line-height: 56.25px;
+         color:  rgba(8, 31, 50, 1);
+      }
+   }
+   .desc{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch; 
+      gap: 20px;
+      .col{
+         display: flex;
+         flex-direction: column;
+         width: 100%;
+         max-width: 413px;
+        max-height: 500px;
+         overflow: auto;
+         .title{
+            text-align: left;
+            color:  rgba(142, 142, 147, 1);
+            font-size: 20px;
+         }
+         .list{
+           margin: 0 0 0 20px;
+            .li{
+               padding: 11px 0;
+               display: flex;
+               justify-content: start;
+               align-items: start;
+               flex-direction: column;
+               border-bottom: 1px solid  rgba(33, 33, 33, 0.08);
+            .li__title{
+              font-size: 16px;
+               font-weight: 700;
+               line-height: 24px;
+               letter-spacing: .15px;
+            }
+            .li__value{
+               font-size: 14px;
+               font-weight: 400;
+               line-height: 29px;
+               letter-spacing: .25px;
+               color: rgba(110, 121, 140, 1);
+            }
+            }
+            .link{
+               width: 100%;
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               padding: 0px 26px 0px 0;
+              
+               &__item{
+                  display: flex;
+                  justify-content: start;
+                  align-items: start;
+                  flex-direction: column;
+                   .li__title{
+                  font-size: 16px;
+                  font-weight: 700;
+                  line-height: 24px;
+                  letter-spacing: .15px;
+               }
+               .li__value, .li__date{
+                  font-size: 14px;
+                  font-weight: 400;
+                  line-height: 29px;
+                  letter-spacing: .25px;
+                  color: rgba(110, 121, 140, 1);
+               }
+               }
+              
+            }
+         }
+      }
+   }
+}

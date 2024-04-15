@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
-import { charactersApi } from 'src/components/posts/character/slisec/charactersApi'
-import characterSlice from "../components/posts/character/slisec/charactersSlice"
-import characterFilterSlice from 'src/components/posts/character/slisec/characterFilterSlice' 
-
+import { charactersApi } from 'src/components/posts/character/slices/charactersApi'
+import characterSlice from "../components/posts/character/slices/charactersSlice"
+import characterFilterSlice from 'src/components/posts/character/slices/characterFilterSlice' 
+import { characterInfoApi } from 'src/page/characterInfo/slices/characterInfoApi'
 
 
  const store = configureStore({
@@ -11,11 +11,12 @@ import characterFilterSlice from 'src/components/posts/character/slisec/characte
     character:characterSlice,
     characterFilter: characterFilterSlice,
     [charactersApi.reducerPath]: charactersApi.reducer,
+    [characterInfoApi.reducerPath]:characterInfoApi.reducer
   
   },
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(charactersApi.middleware),
+    getDefaultMiddleware().concat(charactersApi.middleware, characterInfoApi.middleware),
 })
 
 setupListeners(store.dispatch)

@@ -14,14 +14,15 @@ const SelectSort:FC<SelectSortProps> = ({arrValue, placeholder, onSelectChange }
 
   return (
     
-      <FormControl sx={{  minWidth: 240 }} >
-  <InputLabel  id={placeholder}>{placeholder}</InputLabel>
+      <FormControl sx={{  minWidth: 240, fontSize:"16px"}} >
+  <InputLabel   id={placeholder}>{placeholder}</InputLabel>
   <Select
     labelId={placeholder}
     id={placeholder}
     value={value}
     label={placeholder}
     onChange={handleChange}
+  
   >
    {
       arrValue.map(elem => <MenuItem key={elem} value={elem}>{elem}</MenuItem>)

@@ -1,8 +1,8 @@
 import { useState,useEffect, FC } from 'react';
 import Posts from 'src/components/posts/character/Posts';
-import { useGetPostsQuery } from 'src/components/posts/character/slisec/charactersApi'; 
+import { useGetPostsQuery } from 'src/components/posts/character/slices/charactersApi'; 
 import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHook/reduxHook';
-import { downloadCharacter } from 'src/components/posts/character/slisec/charactersSlice';
+import { downloadCharacter } from 'src/components/posts/character/slices/charactersSlice';
 import { Character } from 'src/utils/types/charactersType';
 import { filterNewPosts } from 'src/utils/filterNewPosts';
 import CharactersForm from './components/CharactersForm/CharactersForm';
@@ -22,7 +22,7 @@ const Characters:FC = () => {
   const [countPages, setCountPages] = useState(1)
   const [postsError, setPostsError] = useState<FetchBaseQueryError | null| unknown  |SerializedError>(null)
 
-  const [postsFilter, setPostsFilter] = useState<Character[]>([])
+  const [postsFiltered, setPostsFiltered] = useState<Character[]>([])
 
   const { data, error, isFetching } = useGetPostsQuery(page);
   
@@ -40,14 +40,14 @@ const Characters:FC = () => {
       setCountPages(data.info.pages)
       if (characters.length === 0) {
         setPosts(data.results);
-        setPostsFilter(data.results)
+        setPostsFiltered(data.results)
       } else {
-        console.log(postsFilter)
+       
         
 
         const newPosts = filterNewPosts(characters, data.results)
         setPosts([...characters, ...newPosts]);
-        setPostsFilter([...postsFilter, ])
+        setPostsFiltered([...postsFiltered, ])
       
      
       }
@@ -58,7 +58,6 @@ const Characters:FC = () => {
     } 
   }, [data, characters]);
 
-  console.log(`filt ${postsFilter.length}  post ${posts.length}  ${isFilteredPosts} ` )
 
 
   return (
@@ -66,9 +65,8 @@ const Characters:FC = () => {
     <CharactersForm 
     setIsFilteredPosts={setIsFilteredPosts}
      posts={posts}
-      postsFilter={postsFilter} 
-      setPostsFilter={setPostsFilter} 
-       setPosts={setPosts}/>
+      setPostsFiltered={setPostsFiltered} 
+       />
      {
       error
        ? <h1>упс что-то пошло не так <br />
@@ -80,7 +78,7 @@ const Characters:FC = () => {
         ? <h1>У вас нет постов</h1>
         : <Posts 
         countPages={countPages} 
-        posts={isFilteredPosts ? postsFilter : posts} 
+        posts={isFilteredPosts ? postsFiltered : posts} 
         page={ page } 
         loadMorePosts={ loadMorePosts}  
         isFetching={isFetching} />

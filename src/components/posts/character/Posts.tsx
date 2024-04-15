@@ -1,9 +1,9 @@
 import React, { useState, useEffect, FC } from 'react';
-import { useGetPostsQuery } from './slisec/charactersApi';
+import { useGetPostsQuery } from './slices/charactersApi';
 import { Link } from 'react-router-dom';
 import PostItem from '../../postItem/PostItem';
 import style from './style.module.scss';
-import ButtonLoadingMore from 'src/ui/button/ButtonLoadingMore';
+import ButtonLoadingMore from 'src/ui/buttons/buttonLoadingMore/ButtonLoadingMore';
 import Loading from 'src/ui/loading/Loading';
 
 import { PostsProps } from './type';
@@ -15,9 +15,9 @@ const Posts:FC<PostsProps> = ({loadMorePosts, page, posts, isFetching, countPage
     <div className={style.posts}>
       <ul className={style.posts__inner}>
         {posts.map((post) => (
-          <li key={post.id} className={style.post}  >
+          <Link to={`/characters/${post.id}`} key={post.id} className={style.post}  >
             <PostItem id={post.id} image={post.image} species={post.species} name={post.name} />
-          </li>
+          </Link>
         ))}
         
 

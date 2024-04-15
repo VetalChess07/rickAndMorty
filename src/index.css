@@ -148,3 +148,21 @@ main {
   max-width: 1020px;
   padding: 0 10px 10px 10px;
 }
+
+button {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  font-family: Roboto-Medium;
+}
+
+li,
+ol {
+  display: block;
+}

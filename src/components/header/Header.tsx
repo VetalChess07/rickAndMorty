@@ -8,7 +8,10 @@ const Header:FC = () => {
   return (
     <header className={style.header}>
       <div className={style.inner + ' container'}>
-         <img src={logo} alt="" />
+         <Link to="/">
+            <img src={logo} alt="" />
+         </Link>
+        
          <nav className={style.nav}>
             <ul className={style.list}>
                {headerNavRoutes.map(el => 
