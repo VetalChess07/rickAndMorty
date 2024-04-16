@@ -1,8 +1,8 @@
 enum StatusCharacter {
-   Alive = 'Alive',
-   Dead = 'Dead',
-   Unknown = 'unknown',
-   Null = 'null'
+   Alive = "Alive",
+   Dead = "Dead",
+   Unknown = "unknown",
+   Null = "null"
  }
 
 export const arrStatusCharacter:StatusCharacter[] = [
@@ -14,7 +14,7 @@ enum GenderCharacter {
    Male = "Male",
    Genderless ="Genderless",
    unknown= "unknown",
-   Null = 'null'
+   Null = "null"
 }
 
 export const arrGenderCharacter:GenderCharacter[] = [
@@ -32,7 +32,7 @@ enum SpeciesCharacter {
    Robot= "Robot",
    Cronenberg = "Cronenberg",
    Disease = "Disease",
-   Null = 'null'
+   Null = "null"
 }
 
 export const arrSpeciesCharacter:SpeciesCharacter[] = [
@@ -51,7 +51,177 @@ export const arrSpeciesCharacter:SpeciesCharacter[] = [
 
 ]
 
+enum LocationType {
+   Planet = 'Planet',
+   Cluster = 'Cluster',
+   SpaceStation = 'Space station',
+   Microverse = 'Microverse',
+   TV = 'TV',
+   Resort = 'Resort',
+   FantasyTown = 'Fantasy town',
+   Dream = 'Dream',
+   Dimension = 'Dimension',
+   Unknown = 'unknown',
+   Menagerie = 'Menagerie',
+   Game = 'Game',
+   Customs = 'Customs',
+   Daycare = 'Daycare',
+   DwarfPlanet = 'Dwarf planet (Celestial Dwarf)',
+   Miniverse = 'Miniverse',
+   Teenyverse = 'Teenyverse',
+   Box = 'Box',
+   Spacecraft = 'Spacecraft',
+   ArtificiallyGeneratedWorld = 'Artificially generated world',
+   Machine = 'Machine',
+   Arcade = 'Arcade',
+   Spa = 'Spa',
+   Quadrant = 'Quadrant',
+   Quasar = 'Quasar',
+   Mount = 'Mount',
+   Liquid = 'Liquid',
+   Convention = 'Convention',
+   Woods = 'Woods',
+   Diegesis = 'Diegesis',
+   NonDiegeticAlternativeReality = 'Non-Diegetic Alternative Reality',
+   Nightmare = 'Nightmare',
+   Asteroid = 'Asteroid',
+   AcidPlant = 'Acid Plant',
+   Reality = 'Reality',
+   DeathStar = 'Death Star',
+   Base = 'Base',
+   ElementalRings = 'Elemental Rings',
+   Human = 'Human',
+   Space = 'Space',
+   Hell = 'Hell',
+   PoliceDepartment = 'Police Department',
+   Country = 'Country',
+   Consciousness = 'Consciousness',
+   Memory = 'Memory',
+   Null = "null"
+ }
+ 
+ export const arrLocationTypes: LocationType[] = [
+   LocationType.Planet,
+   LocationType.Cluster,
+   LocationType.SpaceStation,
+   LocationType.Microverse,
+   LocationType.TV,
+   LocationType.Resort,
+   LocationType.FantasyTown,
+   LocationType.Dream,
+   LocationType.Dimension,
+   LocationType.Unknown,
+   LocationType.Menagerie,
+   LocationType.Game,
+   LocationType.Customs,
+   LocationType.Daycare,
+   LocationType.DwarfPlanet,
+   LocationType.Miniverse,
+   LocationType.Teenyverse,
+   LocationType.Box,
+   LocationType.Spacecraft,
+   LocationType.ArtificiallyGeneratedWorld,
+   LocationType.Machine,
+   LocationType.Arcade,
+   LocationType.Spa,
+   LocationType.Quadrant,
+   LocationType.Quasar,
+   LocationType.Mount,
+   LocationType.Liquid,
+   LocationType.Convention,
+   LocationType.Woods,
+   LocationType.Diegesis,
+   LocationType.NonDiegeticAlternativeReality,
+   LocationType.Nightmare,
+   LocationType.Asteroid,
+   LocationType.AcidPlant,
+   LocationType.Reality,
+   LocationType.DeathStar,
+   LocationType.Base,
+   LocationType.ElementalRings,
+   LocationType.Human,
+   LocationType.Space,
+   LocationType.Hell,
+   LocationType.PoliceDepartment,
+   LocationType.Country,
+   LocationType.Consciousness,
+   LocationType.Memory,
+   LocationType.Null
+ ];
+
+ enum Dimension {
+   DimensionC137 = 'Dimension C-137',
+   Unknown = 'unknown',
+   PostApocalypticDimension = 'Post-Apocalyptic Dimension',
+   ReplacementDimension = 'Replacement Dimension',
+   CronenbergDimension = 'Cronenberg Dimension',
+   FantasyDimension = 'Fantasy Dimension',
+   Dimension5126 = 'Dimension 5-126',
+   TesticleMonsterDimension = 'Testicle Monster Dimension',
+   CromulonDimension = 'Cromulon Dimension',
+   DimensionC500A = 'Dimension C-500A',
+   DimensionK83 = 'Dimension K-83',
+   DimensionJ19ζ7 = 'Dimension J19ζ7',
+   EricStoltzMaskDimension = 'Eric Stoltz Mask Dimension',
+   EvilRicksTargetDimension = "Evil Rick's Target Dimension",
+   GiantTelepathicSpidersDimension = 'Giant Telepathic Spiders Dimension',
+   UnknownDimension = 'Unknown dimension',
+   DimensionK22 = 'Dimension K-22',
+   DimensionD99 = 'Dimension D-99',
+   DimensionD716 = 'Dimension D716',
+   DimensionD716B = 'Dimension D716-B',
+   DimensionD716C = 'Dimension D716-C',
+   DimensionJ22 = 'Dimension J-22',
+   DimensionC35 = 'Dimension C-35',
+   PizzaDimension = 'Pizza Dimension',
+   PhoneDimension = 'Phone Dimension',
+   ChairDimension = 'Chair Dimension',
+   FascistDimension = 'Fascist Dimension',
+   FascistShrimpDimension = 'Fascist Shrimp Dimension',
+   FascistTeddyBearDimension = 'Fascist Teddy Bear Dimension',
+   WaspDimension = 'Wasp Dimension',
+   TuskDimension = 'Tusk Dimension',
+   MagicDimension = 'Magic Dimension',
+   MergedDimension = 'Merged Dimension',
+   Null = "null"
+}
+ 
+ export const arrDimensions: Dimension[] = [
+   Dimension.DimensionC137,
+   Dimension.Unknown,
+   Dimension.PostApocalypticDimension,
+   Dimension.ReplacementDimension,
+   Dimension.CronenbergDimension,
+   Dimension.FantasyDimension,
+   Dimension.Dimension5126,
+   Dimension.TesticleMonsterDimension,
+   Dimension.CromulonDimension,
+   Dimension.DimensionC500A,
+   Dimension.DimensionK83,
+   Dimension.DimensionJ19ζ7,
+   Dimension.EricStoltzMaskDimension,
+   Dimension.EvilRicksTargetDimension,
+   Dimension.GiantTelepathicSpidersDimension,
+   Dimension.UnknownDimension,
+   Dimension.DimensionK22,
+   Dimension.DimensionD99,
+   Dimension.DimensionD716,
+   Dimension.DimensionD716B,
+   Dimension.DimensionD716C,
+   Dimension.DimensionJ22,
+   Dimension.DimensionC35,
+   Dimension.PizzaDimension,
+   Dimension.PhoneDimension,
+   Dimension.ChairDimension,
+   Dimension.FascistDimension,
+   Dimension.FascistShrimpDimension,
+   Dimension.FascistTeddyBearDimension,
+   Dimension.WaspDimension,
+   Dimension.TuskDimension,
+   Dimension.MagicDimension,
+   Dimension.MergedDimension,
+   Dimension.Null
+ ];
 
 
-
-// Human', 'Alien', 'Humanoid', 'unknown', 'Poopybutthole', 'Mythological Creature', 'Animal', 'Robot', 'Cronenberg', 'Disease'
+// Human", "Alien", "Humanoid", "unknown", "Poopybutthole", "Mythological Creature", "Animal", "Robot", "Cronenberg", "Disease"

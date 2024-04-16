@@ -4,7 +4,7 @@ import type { cardCharactersInfoProps } from './type'
 import { Character } from 'src/utils/types/charactersType'
 import {useGetCharacterInfoQuery, useGetAllEpisodesCharacterQuery } from 'src/page/characterInfo/slices/characterInfoApi'
 import { Link } from 'react-router-dom'
-import ButtonGoBack from 'src/ui/buttons/buttonGoBack/ButtonGoBack'
+
 
 import style from "./style.module.scss"
 
@@ -22,7 +22,7 @@ const CardCharactersInfo:FC<cardCharactersInfoProps> = ({data}) => {
 
   return (
     <div className={style.inner}>
-       <ButtonGoBack className={style.goBack} />
+     
       <div className={style.card__character}>
         
          <div className={style.card__header}>

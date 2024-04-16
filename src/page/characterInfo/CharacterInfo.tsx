@@ -18,22 +18,18 @@ const CharacterInfo = () => {
      {
       isFetching ? (
        <>
-<Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={12}>
-        <Skeleton variant="circular" width={300} height={300} />
-        </Grid>
-       
-        <Grid item xs={12}>
+      <Grid sx={{display:"flex", justifyContent:"center" ,alignItems:"center", flexDirection:"column" ,textAlign:"center"}} container >
+        <Grid sx={{display:"flex", justifyContent:"center" ,alignItems:"center", flexDirection:"column" ,textAlign:"center"}} item xs={12}>
+          <Skeleton sx={{ textAlign:"center"}} variant="circular" width={300} height={300} />
           <Skeleton  width={300} height={50} />
         </Grid>
+       
+       
 
-        <Grid item xs={6}>
-        <Skeleton  height={500}  />
-      
-        </Grid>
-        <Grid item xs={6}>
-          <Skeleton height={500} />
-        </Grid>
+        <Grid sx={{width:"100%",maxWidth:"none", gap:"20px" ,display:"flex", justifyContent:"flex-start" ,alignItems:"flex-start"}} item xs={6}>
+          <Skeleton  sx={{transform:"none"}} height={500} width={340} />
+          <Skeleton sx={ { transform:"none"}} height={500} width={340} />
+        </Grid>   
       </Grid>
 
      

@@ -6,9 +6,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import { CardPostProps } from './type';
+import { CardPostCharacterProps } from './type';
 
-const CardPost:FC<CardPostProps> = ({image, title, text}) => {
+const CardPostCharacter:FC<CardPostCharacterProps> = ({image, title, text}) => {
   const isSmallScreen = useMediaQuery('(max-width:360px)');
   const cardHeight = isSmallScreen ? 232: 168;
   const cardWidth = isSmallScreen ? 312: 240;
@@ -38,4 +38,4 @@ const CardPost:FC<CardPostProps> = ({image, title, text}) => {
     );
 }
 
-export default CardPost
+export default CardPostCharacter

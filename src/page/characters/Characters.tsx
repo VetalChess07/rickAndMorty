@@ -1,5 +1,5 @@
 import { useState,useEffect, FC } from 'react';
-import Posts from 'src/components/posts/character/Posts';
+import CharacterPosts from 'src/components/posts/character/CharacterPosts';
 import { useGetPostsQuery } from 'src/components/posts/character/slices/charactersApi'; 
 import { useAppDispatch, useAppSelector } from 'src/hooks/reduxHook/reduxHook';
 import { downloadCharacter } from 'src/components/posts/character/slices/charactersSlice';
@@ -26,7 +26,7 @@ const Characters:FC = () => {
 
   const { data, error, isFetching } = useGetPostsQuery(page);
   
-  const[acc, setAcc] = useState([])
+  
 
   const loadMorePosts = () => {
     dispatch(downloadCharacter(data.results))
@@ -76,7 +76,7 @@ const Characters:FC = () => {
         </h1>
        : posts.length === 0
         ? <h1>У вас нет постов</h1>
-        : <Posts 
+        : <CharacterPosts 
         countPages={countPages} 
         posts={isFilteredPosts ? postsFiltered : posts} 
         page={ page } 

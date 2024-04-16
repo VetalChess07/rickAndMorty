@@ -1,6 +1,6 @@
 import { Character } from "src/utils/types/charactersType"
 
-export type PostsProps = {
+export type CharacterPostsProps = {
    posts: Character[]
    loadMorePosts: ()=> void
    page: number 

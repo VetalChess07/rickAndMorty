@@ -1,4 +1,4 @@
-export type PostItemProps = {
+export type CharacterPostItemProps = {
    id:number,
    name:string,
    image:string,

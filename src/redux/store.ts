@@ -1,22 +1,36 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
+
 import { charactersApi } from 'src/components/posts/character/slices/charactersApi'
 import characterSlice from "../components/posts/character/slices/charactersSlice"
-import characterFilterSlice from 'src/components/posts/character/slices/characterFilterSlice' 
 import { characterInfoApi } from 'src/page/characterInfo/slices/characterInfoApi'
+
+
+import { locationsApi } from 'src/components/posts/locations/slices/locationsApi'
+import locationsSlice from 'src/components/posts/locations/slices/locationsSlice'
+
+
+
+// import characterFilterSlice from 'src/components/posts/character/slices/characterFilterSlice' 
 
 
  const store = configureStore({
   reducer: {
     character:characterSlice,
-    characterFilter: characterFilterSlice,
+    locations:locationsSlice,
+    // characterFilter: characterFilterSlice,
     [charactersApi.reducerPath]: charactersApi.reducer,
-    [characterInfoApi.reducerPath]:characterInfoApi.reducer
-  
+    [characterInfoApi.reducerPath]:characterInfoApi.reducer,
+    [locationsApi.reducerPath]:  locationsApi.reducer
   },
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(charactersApi.middleware, characterInfoApi.middleware),
+    getDefaultMiddleware().concat(
+      charactersApi.middleware,
+      locationsApi.middleware,
+       characterInfoApi.middleware,
+      
+      ),
 })
 
 setupListeners(store.dispatch)

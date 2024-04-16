@@ -3,9 +3,7 @@ import SelectSort from 'src/ui/select/Select'
 import { arrSpeciesCharacter, arrGenderCharacter, arrStatusCharacter } from 'src/utils/dataSelect';
 import InputsFilterPosts from 'src/ui/inputs/inputsFilterPosts/inputsFilterPosts';
 import { CharactersFormProps } from './type';
-
-import style from "./style.module.scss"
-
+import FormFilterPosts from 'src/components/formFilterPosts/FormFilterPosts';
 
 const CharactersForm:FC<CharactersFormProps> = memo(({posts , setIsFilteredPosts , setPostsFiltered}) => {
 
@@ -37,9 +35,10 @@ const CharactersForm:FC<CharactersFormProps> = memo(({posts , setIsFilteredPosts
   }
 
   useEffect(()=>{
+    
     filterPosts()
   }, [species, gender, status, posts,name])
-  
+
 
   const onChangeSelect = (e:string, type:string) =>{
       switch (type) {
@@ -59,7 +58,7 @@ const CharactersForm:FC<CharactersFormProps> = memo(({posts , setIsFilteredPosts
 
  
   return (
-    <form className={style.form__filter}>
+    <FormFilterPosts>
       <InputsFilterPosts setValue={setName} value={name} placeholder="ffff"/>
       
        <SelectSort onSelectChange={onChangeSelect} placeholder='species' arrValue={arrSpeciesCharacter}/>
@@ -68,7 +67,7 @@ const CharactersForm:FC<CharactersFormProps> = memo(({posts , setIsFilteredPosts
    
     <SelectSort onSelectChange={onChangeSelect} placeholder='gender' arrValue={arrGenderCharacter}/>
     
-    </form>
+    </FormFilterPosts>
   )
 })
 

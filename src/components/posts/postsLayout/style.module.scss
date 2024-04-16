@@ -1,0 +1,48 @@
+.posts__containner{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+.posts__inner {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   grid-gap: 20px;
+   align-items: stretch;
+
+}
+.posts__button_loadMore{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+    margin-top: 48px;
+  }
+ 
+ 
+
+@media (max-width:1080px) {
+   .posts__inner {
+     
+      grid-template-columns: repeat(3, 1fr);
+    
+   
+    }
+ }
+
+ @media (max-width:780px) {
+   .posts__inner {
+    
+      grid-template-columns: repeat(2, 1fr);
+     
+   
+    }
+ }
+ @media (max-width:360px) {
+   .posts__inner {
+    
+      grid-template-columns: repeat(1, 1fr);
+     
+   
+    }
+ }
+ 
+ 

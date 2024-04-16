@@ -41,3 +41,6 @@ export const headerNavRoutes = [
     text: "Episodes",
   },
 ]
+export const arrRoutesisGoBackDisabled = [
+  '/', '/locations', '/episodes'
+] 

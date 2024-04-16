@@ -6,7 +6,7 @@ import searchImg from "/public/images/search.svg"
 
 const InputsFilterPosts:FC<InputsFilterPostsProps> = ({value,placeholder, setValue}) => {
    const [inputValue, setInputValue] = useState(value)
-   console.log(value)
+   
    const onChange = (e: ChangeEvent<HTMLInputElement>) =>{
       setInputValue(e.target.value as string)
       setValue(e.target.value as string)

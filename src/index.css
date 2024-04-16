@@ -108,6 +108,7 @@ section {
 }
 body {
   line-height: 1;
+  width: 100%;
 }
 ol,
 ul {
@@ -147,6 +148,7 @@ main {
   width: 100%;
   max-width: 1020px;
   padding: 0 10px 10px 10px;
+  position: relative;
 }
 
 button {
