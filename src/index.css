@@ -164,6 +164,14 @@ span {
   font-family: Roboto-Medium;
 }
 
+h2 {
+  line-height: 42.19px;
+  font-size: 36px;
+  letter-spacing: 0.15px;
+  font-weight: 400;
+  text-align: center;
+}
+
 li,
 ol {
   display: block;

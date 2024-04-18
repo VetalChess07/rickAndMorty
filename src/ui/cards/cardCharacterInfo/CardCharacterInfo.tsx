@@ -1,6 +1,6 @@
 import {FC, useEffect, useState} from 'react'
 import { Avatar } from '@mui/material'
-import type { cardCharactersInfoProps } from './type' 
+import type { CardCharactersInfoProps } from './type' 
 import { Character } from 'src/utils/types/charactersType'
 import {useGetCharacterInfoQuery, useGetAllEpisodesCharacterQuery } from 'src/page/characterInfo/slices/characterInfoApi'
 import { Link } from 'react-router-dom'
@@ -12,7 +12,7 @@ import { sliceData } from 'src/utils/functions/sliceData'
 import type { Episode } from 'src/utils/types/episodesType'
 
 
-const CardCharactersInfo:FC<cardCharactersInfoProps> = ({data}) => {
+const CardCharacterInfo:FC<CardCharactersInfoProps> = ({data}) => {
 
    const {id,name ,image, gender, status, species, origin, type, location, episode} = data
  
@@ -123,4 +123,4 @@ const CardCharactersInfo:FC<cardCharactersInfoProps> = ({data}) => {
   )
 }
 
-export default CardCharactersInfo
+export default CardCharacterInfo

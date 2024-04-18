@@ -1,36 +1,57 @@
-import {FC} from 'react'
-import type { cardPostLocationProps } from './type'
-import Box from '@mui/material/Box';
+import { FC } from 'react';
+import type { cardPostLocationProps } from './type';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-const CardPostLocation:FC<cardPostLocationProps> = ({name, type}) => {
-   return (
-      <Card sx={{ minWidth: 275 }}>
-        <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {name}
-          </Typography>
-          <Typography variant="h5" component="div">
-         {type}
-          </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            adjective
-          </Typography>
-          <Typography variant="body2">
-            well meaning and kindly.
-            <br />
-            {'"a benevolent smile"'}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Learn More</Button>
-        </CardActions>
+import { styled, createTheme } from "@mui/material/styles";
+
+import style from "./style.module.scss";
+import { ThemeProvider } from '@emotion/react';
+
+const CardContentNoPadding = styled(CardContent)(`
+  padding: 0;
+  &:last-child {
+    padding-bottom: 0;
+  }
+`);
+
+const theme = createTheme({
+  typography: {
+    h3: {
+      fontSize: 20,
+      fontWeight: 500,
+      fontFamily:"Roboto-Medium",
+    },
+    body1:{
+      fontSize: "14px",
+      fontFamily:"Roboto-Medium",
+      lineHeight:"21px",
+      letterSpacing:.25
+    }
+   
+  },
+});
+
+const CardPostLocation: FC<cardPostLocationProps> = ({ name, type }) => {
+
+
+  
+  return (
+    <ThemeProvider  theme={theme}>
+      <Card sx={{ minWidth: 240, padding: "38px 16px", height:"100%" }}>
+      <CardContentNoPadding  className={style.inner}>
+        <Typography variant='h3' className={style.title}>
+          {name}
+        </Typography>
+        <Typography variant='body1' className={style.text} >
+          {type}
+        </Typography>
+      </CardContentNoPadding>
       </Card>
-    );
+    </ThemeProvider>
+   
+  );
 }
 
-export default CardPostLocation
+export default CardPostLocation;

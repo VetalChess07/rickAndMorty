@@ -1,5 +1,5 @@
 import { Character } from "src/utils/types/charactersType"
 
-export type cardCharactersInfoProps = {
+export type CardCharactersInfoProps = {
    data: Character
 }

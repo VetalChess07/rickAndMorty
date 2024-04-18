@@ -16,10 +16,13 @@ const LocationsPosts:FC<locationsPostsProps> = ({loadMorePosts, page, posts, isF
     <>
       <PostsLayout>
         {posts.map((post) => (
-          <Link to={`/characters/${post.id}`} key={post.id} className={style.post}  >
-            <LocationsPostItem name={post.name} type={post.type} />
+          <li key={post.id} className={style.link}>
+            <Link to={`/locations/${post.id}`}  className={style.post}  >
+              <LocationsPostItem name={post.name} type={post.type} />
             {/* <PostItem id={post.id} image={post.image} species={post.species} name={post.name} /> */}
-          </Link>
+            </Link>
+          </li>
+        
         ))}
       </PostsLayout>
      <ButtonLoadMoreLayout>

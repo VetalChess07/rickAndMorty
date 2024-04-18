@@ -49,7 +49,6 @@ const Locations:FC = () => {
     } 
   }, [locationsData, isLoadedLocations]);
 
-  console.log(locationsFiltered)
 
   return (
     <>

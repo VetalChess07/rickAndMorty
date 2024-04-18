@@ -2,9 +2,9 @@ import {FC} from 'react'
 import type { LocationsPostItemProps } from './type'
 import CardPostLocation from 'src/ui/cards/cardPostLocation/CardPostLocation'
 
-const LocationsPostItem:FC<LocationsPostItemProps> = ({name, url, type}) => {
+const LocationsPostItem:FC<LocationsPostItemProps> = ({name, type}) => {
   return (
-    <CardPostLocation name={name} url={url} type={type} />
+    <CardPostLocation name={name}  type={type} />
   )
 }
 
