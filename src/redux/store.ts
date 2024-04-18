@@ -10,6 +10,9 @@ import { locationsApi } from 'src/components/posts/locations/slices/locationsApi
 import locationsSlice from 'src/components/posts/locations/slices/locationsSlice'
 import { locationInfoApi } from 'src/page/locationsInfo/slices/locationsInfoApi'
 
+import { episodesApi } from 'src/components/posts/episodes/slices/episodesApi'
+import episodesSlice from 'src/components/posts/episodes/slices/episodesSlice'
+
 
 // import characterFilterSlice from 'src/components/posts/character/slices/characterFilterSlice' 
 
@@ -18,11 +21,14 @@ import { locationInfoApi } from 'src/page/locationsInfo/slices/locationsInfoApi'
   reducer: {
     character:characterSlice,
     locations:locationsSlice,
+    episodes:episodesSlice,
     // characterFilter: characterFilterSlice,
     [charactersApi.reducerPath]: charactersApi.reducer,
     [characterInfoApi.reducerPath]:characterInfoApi.reducer,
     [locationsApi.reducerPath]:  locationsApi.reducer,
     [locationInfoApi.reducerPath]: locationInfoApi.reducer,
+    [episodesApi.reducerPath]: episodesApi.reducer
+
   },
 
   middleware: (getDefaultMiddleware) =>
@@ -30,7 +36,8 @@ import { locationInfoApi } from 'src/page/locationsInfo/slices/locationsInfoApi'
       charactersApi.middleware,
       characterInfoApi.middleware,
       locationsApi.middleware,
-      locationInfoApi.middleware  
+      locationInfoApi.middleware,
+      episodesApi.middleware  
     ),
 })
 

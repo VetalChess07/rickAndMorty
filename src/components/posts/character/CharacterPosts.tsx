@@ -17,9 +17,12 @@ const CharacterPosts:FC<CharacterPostsProps> = ({loadMorePosts, page, posts, isF
     <>
       <PostsLayout>
         {posts.map((post) => (
-          <Link to={`/characters/${post.id}`} key={post.id} className={style.post}  >
-            <CharacterPostItem id={post.id} image={post.image} species={post.species} name={post.name} />
-          </Link>
+          <li key={post.id} className={style.link}>
+            <Link to={`/characters/${post.id}`}  className={style.post}  >
+              <CharacterPostItem id={post.id} image={post.image} species={post.species} name={post.name} />
+            </Link>
+          </li>
+          
         ))}
       </PostsLayout>
      <ButtonLoadMoreLayout>

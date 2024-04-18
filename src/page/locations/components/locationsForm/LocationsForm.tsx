@@ -1,6 +1,5 @@
 import {FC, useEffect, useState, memo} from 'react'
 import SelectSort from 'src/ui/select/Select'
-import { arrSpeciesCharacter, arrGenderCharacter, arrStatusCharacter } from 'src/utils/dataSelect';
 import InputsFilterPosts from 'src/ui/inputs/inputsFilterPosts/inputsFilterPosts';
 import type { LocationsFormProps } from './type';
 import FormFilterPosts from 'src/components/formFilterPosts/FormFilterPosts';

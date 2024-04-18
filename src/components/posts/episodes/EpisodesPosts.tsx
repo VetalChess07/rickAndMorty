@@ -5,20 +5,18 @@ import ButtonLoadingMore from 'src/ui/buttons/buttonLoadingMore/ButtonLoadingMor
 import ButtonLoadMoreLayout from '../postsLayout/ButtonLoadMoreLayout';
 import Loading from 'src/ui/loading/Loading';
 import PostsLayout from '../postsLayout/PostsLayout';
+import EpisodePostItem from 'src/components/postItem/episodePostItem/EpisodePostItem';
 
-import LocationsPostItem from 'src/components/postItem/locationsPostsItem/LocationsPostItem';
+import { EpisodesPostsProps } from './type';
 
-import type { locationsPostsProps } from './type';
-
-const LocationsPosts:FC<locationsPostsProps> = ({loadMorePosts, page, posts, isFetching, countPages}) => {
+const EpisodesPosts:FC<EpisodesPostsProps> = ({loadMorePosts, page, posts, isFetching, countPages}) => {
   return (
     <>
       <PostsLayout>
         {posts.map((post) => (
           <li key={post.id} className={style.link}>
-            <Link to={`/locations/${post.id}`}  className={style.post}  >
-              <LocationsPostItem name={post.name} type={post.type} />
-            {/* <PostItem id={post.id} image={post.image} species={post.species} name={post.name} /> */}
+            <Link to={`/episodes/${post.id}`}  className={style.post}  >
+              <EpisodePostItem episode={post.episode} name={post.name} airDate={post.air_date} />
             </Link>
           </li>
         
@@ -33,7 +31,7 @@ const LocationsPosts:FC<locationsPostsProps> = ({loadMorePosts, page, posts, isF
               }
       </ButtonLoadMoreLayout>
     </>
-  );
+  )
 }
 
-export default LocationsPosts
+export default EpisodesPosts

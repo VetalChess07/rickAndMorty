@@ -1,6 +1,6 @@
 import type { Character } from "./charactersType"
 
-export type Episode = {
+export type EpisodeType = {
    air_date :string
    characters:Character[]
    created: Date | string

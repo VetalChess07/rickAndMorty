@@ -24,7 +24,7 @@ const Locations:FC = () => {
   const {data:locationsData, error, isFetching} = useGetLocationsQuery(page)
 
 
-  const loadMorePosts = () => {
+  const loadMoreLocations = () => {
     dispatch(downloadLocation(locationsData.results))
   };
 
@@ -70,7 +70,7 @@ const Locations:FC = () => {
        
         posts={isFilteredLocations ? locationsFiltered : locations} 
         page={ page } 
-        loadMorePosts={ loadMorePosts}  
+        loadMorePosts={ loadMoreLocations}  
         isFetching={isFetching} 
          countPages={countPages}
         />
