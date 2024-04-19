@@ -1,24 +1,26 @@
-import {FC, useEffect, useState} from 'react'
+import {FC} from 'react'
 import { Avatar } from '@mui/material'
 import type { CardCharactersInfoProps } from './type' 
-import { Character } from 'src/utils/types/charactersType'
-import {useGetCharacterInfoQuery, useGetAllEpisodesCharacterQuery } from 'src/page/characterInfo/slices/characterInfoApi'
+
+import { useGetAllEpisodesCharacterQuery } from 'src/page/characterInfo/slices/characterInfoApi'
 import { Link } from 'react-router-dom'
 
 
 import style from "./style.module.scss"
 
 import { sliceData } from 'src/utils/functions/sliceData'
-import type { Episode } from 'src/utils/types/episodesType'
+import type { EpisodeType } from 'src/utils/types/episodesType'
+import { receivingId } from 'src/utils/functions/receivingId'
 
 
 const CardCharacterInfo:FC<CardCharactersInfoProps> = ({data}) => {
 
    const {id,name ,image, gender, status, species, origin, type, location, episode} = data
- 
+   const locationId = receivingId(location.url)
    const arrEpisode = sliceData(episode)
    const {data:episodeData, isFetching} = useGetAllEpisodesCharacterQuery(arrEpisode)
 
+   console.log(episodeData)
 
   return (
     <div className={style.inner}>
@@ -55,7 +57,7 @@ const CardCharacterInfo:FC<CardCharactersInfoProps> = ({data}) => {
                         <span className={style.li__value}>{type.length === 0 ? "Unknown" : type }</span>
                      </li>
                      <li className={style.li}>
-                        <Link className={style.link} to={data.location.url}>
+                        <Link className={style.link} to={`/locations/${locationId}`}>
                            <div className={style.link__item} >
                               <h4 className={style.li__title}>Location</h4>
                            <span className={style.li__value}>
@@ -76,9 +78,9 @@ const CardCharacterInfo:FC<CardCharactersInfoProps> = ({data}) => {
                      ? <span>load...</span>
                       :
                       Array.isArray(episodeData) 
-                      ?  episodeData.map((episode:Episode)=>
+                      ?  episodeData.map((episode:EpisodeType)=>
                       <li key={episode.id}  className={style.li}>
-                        <Link className={style.link} to={episode.url}>
+                        <Link className={style.link}  to={`/episodes/${episode.id}`}>
                            <div className={style.link__item}>
                               <h4 className={style.li__title}>
                                  {episode.episode}
@@ -95,7 +97,7 @@ const CardCharacterInfo:FC<CardCharactersInfoProps> = ({data}) => {
                      </li>
                        )
                       : <li key={episodeData.id}  className={style.li}>
-                      <Link className={style.link} to={episodeData.url}>
+                      <Link className={style.link} to={`/episodes/${episodeData.id}`}>
                          <div className={style.link__item}>
                             <h4 className={style.li__title}>
                                {episodeData.episode}

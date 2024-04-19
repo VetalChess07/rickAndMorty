@@ -1,9 +1,10 @@
-import Characters from "./page/characters/Characters";
-import Locations from "./page/locations/Locations";
-import Episodes from "./page/episodes/Episodes";
 import NotFound from "./page/notFound/NotFound";
+import Characters from "./page/characters/Characters";
 import CharacterInfo from "./page/characterInfo/CharacterInfo";
+import Locations from "./page/locations/Locations";
 import LocationsInfo from "./page/locationsInfo/LocationsInfo";
+import Episodes from "./page/episodes/Episodes";
+import EpisodeInfo from "./page/episodeInfo/EpisodeInfo";
 
 export const publickRoutes = [
   {
@@ -25,6 +26,9 @@ export const publickRoutes = [
   {
     path: "/episodes",
     element: Episodes,
+  }, {
+    path: "/episodes/:id",
+    element: EpisodeInfo,
   },
   {
     path: "*",

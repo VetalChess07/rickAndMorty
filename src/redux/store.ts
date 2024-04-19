@@ -12,7 +12,7 @@ import { locationInfoApi } from 'src/page/locationsInfo/slices/locationsInfoApi'
 
 import { episodesApi } from 'src/components/posts/episodes/slices/episodesApi'
 import episodesSlice from 'src/components/posts/episodes/slices/episodesSlice'
-
+import { episodeInfoApi } from 'src/page/episodeInfo/slices/episodeInfoApi'
 
 // import characterFilterSlice from 'src/components/posts/character/slices/characterFilterSlice' 
 
@@ -27,7 +27,8 @@ import episodesSlice from 'src/components/posts/episodes/slices/episodesSlice'
     [characterInfoApi.reducerPath]:characterInfoApi.reducer,
     [locationsApi.reducerPath]:  locationsApi.reducer,
     [locationInfoApi.reducerPath]: locationInfoApi.reducer,
-    [episodesApi.reducerPath]: episodesApi.reducer
+    [episodesApi.reducerPath]: episodesApi.reducer,
+    [episodeInfoApi.reducerPath]: episodeInfoApi.reducer
 
   },
 
@@ -37,7 +38,8 @@ import episodesSlice from 'src/components/posts/episodes/slices/episodesSlice'
       characterInfoApi.middleware,
       locationsApi.middleware,
       locationInfoApi.middleware,
-      episodesApi.middleware  
+      episodesApi.middleware,
+      episodeInfoApi.middleware  
     ),
 })
 
