@@ -1,0 +1,6 @@
+.modal{
+   display: none;
+   @media (max-width:580px) {
+      display: block;
+   }
+}

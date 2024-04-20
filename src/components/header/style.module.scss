@@ -25,4 +25,20 @@
          }
       }
    }
+   .burger{
+      display: none;
+   }
+}
+
+@media (max-width:540px) {
+   .header{
+   height: 10dvh;
+   .nav{
+      display: none;
+   }
+   .burger{
+      display: block;
+   }
+   }
+   
 }

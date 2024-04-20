@@ -3,6 +3,7 @@ import { headerNavRoutes } from '../../routes'
 import { Link } from 'react-router-dom'
 import logo from "public/images/logo.svg"
 import style from "./style.module.scss"
+import BurgerMenu from 'src/ui/burgerMenu/BurgerMenu'
 
 const Header:FC = () => {
   return (
@@ -24,6 +25,11 @@ const Header:FC = () => {
             )}
             </ul>
          </nav>
+         <div className={style.burger}>
+            <BurgerMenu />
+         </div>
+         
+         
       </div>
      
       

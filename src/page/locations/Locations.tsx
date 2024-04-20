@@ -8,6 +8,11 @@ import { downloadLocation } from 'src/components/posts/locations/slices/location
 import { filterNewPosts } from 'src/utils/filterNewPosts';
 import LocationsPosts from 'src/components/posts/locations/LocationsPosts';
 import LocationsForm from './components/locationsForm/LocationsForm';
+import Hero from 'src/components/hero/Hero';
+
+import mainImg from "/public/images/locations__img.png"
+
+
 
 const Locations:FC = () => {
 
@@ -52,6 +57,7 @@ const Locations:FC = () => {
 
   return (
     <>
+         <Hero src={mainImg} alt='locations' classes='locations'/>
       <LocationsForm
       setIsFilteredPosts={setIsFilteredLocations}
       setPostsFiltered={setLocationsFiltered}

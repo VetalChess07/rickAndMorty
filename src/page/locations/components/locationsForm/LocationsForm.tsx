@@ -4,6 +4,9 @@ import InputsFilterPosts from 'src/ui/inputs/inputsFilterPosts/inputsFilterPosts
 import type { LocationsFormProps } from './type';
 import FormFilterPosts from 'src/components/formFilterPosts/FormFilterPosts';
 import { arrLocationTypes, arrDimensions } from 'src/utils/dataSelect';
+import ModalFilterPosts from 'src/ui/modalFilterPosts/ModalFilterPosts';
+
+import style from "./style.module.scss"
 
 const LocationsForm:FC<LocationsFormProps> = ({posts, setIsFilteredPosts, setPostsFiltered}) => {
    const [name, setName] = useState<string>('')
@@ -62,8 +65,19 @@ const LocationsForm:FC<LocationsFormProps> = ({posts, setIsFilteredPosts, setPos
       
       <SelectSort onSelectChange={onChangeSelect} placeholder='Dimension' arrValue={arrDimensions}/>
       
-   <SelectSort onSelectChange={onChangeSelect} placeholder='Type' arrValue={arrLocationTypes}/>
+      <SelectSort onSelectChange={onChangeSelect} placeholder='Type' arrValue={arrLocationTypes}/>
      
+
+      <div className={style.modal}>
+        <ModalFilterPosts>
+          
+      <SelectSort onSelectChange={onChangeSelect} placeholder='Dimension' arrValue={arrDimensions}/>
+      
+      <SelectSort onSelectChange={onChangeSelect} placeholder='Type' arrValue={arrLocationTypes}/>
+      
+        </ModalFilterPosts>
+      </div>
+
     </FormFilterPosts>
   )
 }

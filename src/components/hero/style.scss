@@ -1,0 +1,29 @@
+.hero{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 6px;
+  
+   img{
+        object-fit: cover;
+   }
+   .characters {
+      width: 100%;
+      max-width: 600px;
+      max-height:200px ;
+   
+   }
+   .locations{
+      width: 100%;
+      max-width: 326px;
+      max-height:202px;
+   }
+   .episodes{
+      width: 100%;
+      max-width: 269px;
+      max-height:210px;
+      
+   }
+
+   
+}

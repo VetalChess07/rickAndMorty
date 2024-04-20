@@ -8,7 +8,9 @@ import { filterNewPosts } from 'src/utils/filterNewPosts';
 import CharactersForm from './components/CharactersForm/CharactersForm';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
 import { SerializedError } from '@reduxjs/toolkit';
+import Hero from 'src/components/hero/Hero';
 
+import mainImg from "/public/images/main_img.jpg"
 
 const Characters:FC = () => {
   
@@ -62,6 +64,9 @@ const Characters:FC = () => {
 
   return (
     <>
+    <Hero src={mainImg} alt='characters' classes='characters'>
+     
+    </Hero>
     <CharactersForm 
     setIsFilteredPosts={setIsFilteredPosts}
      posts={posts}
@@ -91,56 +96,3 @@ const Characters:FC = () => {
   );
 }
 export default Characters;
-
-// setPosts(prevPosts => {
-//   const newPosts = data.results.filter(newPost => !prevPosts.some(prevPost => prevPost.id === newPost.id));
-//   return [...prevPosts, ...newPosts];
-// });
-
-// useEffect(() => {
-   
-//   console.log(characters, page)
-//    if (data ) {
-   
-//       setPosts(prevPosts => {
-// const newPosts = data.results.filter(newPost => !prevPosts.some(prevPost => prevPost.id === newPost.id));
-//   return [...prevPosts, ...newPosts];
-// });
-//   }
-//   else if(data && characters.length !== 0 ){
-//     console.log(characters, data.results)
-//     setPosts(characters, data.results)
-//   }
-
-  
-
- 
-// }, [data, page]);
-
-// async function getAllStatuses(url) {
-//   let allStatuses = [];
-
-//   while (url) {
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     const statuses = data.results.map(character => character.species);
-//     allStatuses.push(...statuses);
-//     url = data.info.next; // Получение ссылки на следующую страницу
-//   }
-
-//   // Извлечение уникальных статусов
-//   const uniqueStatuses = [...new Set(allStatuses)];
-//   console.log(uniqueStatuses)
-//   return uniqueStatuses;
-// }
-
-// // Вызов функции для получения всех статусов
-// const ff =   getAllStatuses('https://rickandmortyapi.com/api/character')
-//   .then(statuses => {
-//     console.log('Все виды статусов:', statuses);
-//   })
-//   .catch(error => {
-//     console.error('Ошибка при получении данных:', error);
-//   });
-
-//   console.log(ff)

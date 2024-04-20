@@ -1,12 +1,34 @@
 .form__filter{
    display: flex;
    justify-content: center;
+   flex-wrap: wrap;
    align-items: center;
   gap: 10px;
   margin-bottom: 61px;
   position: sticky;
-  top: 70px;
+  top: 73px;
   z-index: 100;
   background-color: #fff;
   padding: 10px 0;
+  
+  @media (  max-width:580px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    top: 90px;
+    background-color: transparent;
+    margin-bottom: 30px;
+    div:nth-child(1){
+      display: flex !important;
+    }
+    div:last-child{
+      display: block;
+    }
+    div {
+     display: none ;
+    }
+  }
 }

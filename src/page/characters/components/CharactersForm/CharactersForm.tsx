@@ -4,6 +4,8 @@ import { arrSpeciesCharacter, arrGenderCharacter, arrStatusCharacter } from 'src
 import InputsFilterPosts from 'src/ui/inputs/inputsFilterPosts/inputsFilterPosts';
 import { CharactersFormProps } from './type';
 import FormFilterPosts from 'src/components/formFilterPosts/FormFilterPosts';
+import style from "./style.module.scss"
+import ModalFilterPosts from 'src/ui/modalFilterPosts/ModalFilterPosts';
 
 const CharactersForm:FC<CharactersFormProps> = memo(({posts , setIsFilteredPosts , setPostsFiltered}) => {
 
@@ -60,13 +62,20 @@ const CharactersForm:FC<CharactersFormProps> = memo(({posts , setIsFilteredPosts
   return (
     <FormFilterPosts>
       <InputsFilterPosts setValue={setName} value={name} placeholder="ffff"/>
-      
-       <SelectSort onSelectChange={onChangeSelect} placeholder='species' arrValue={arrSpeciesCharacter}/>
-  
-    <SelectSort onSelectChange={onChangeSelect} placeholder='status' arrValue={arrStatusCharacter}/>
-   
-    <SelectSort onSelectChange={onChangeSelect} placeholder='gender' arrValue={arrGenderCharacter}/>
     
+      <SelectSort onSelectChange={onChangeSelect} placeholder='species' arrValue={arrSpeciesCharacter}/>
+      <SelectSort onSelectChange={onChangeSelect} placeholder='status' arrValue={arrStatusCharacter}/>
+      <SelectSort onSelectChange={onChangeSelect} placeholder='gender' arrValue={arrGenderCharacter}/>
+     
+     
+      <div className={style.modal}>
+        <ModalFilterPosts>
+          <SelectSort onSelectChange={onChangeSelect} placeholder='species' arrValue={arrSpeciesCharacter}/>
+          <SelectSort onSelectChange={onChangeSelect} placeholder='status' arrValue={arrStatusCharacter}/>
+          <SelectSort onSelectChange={onChangeSelect} placeholder='gender' arrValue={arrGenderCharacter}/>
+        </ModalFilterPosts>
+      </div>
+   
     </FormFilterPosts>
   )
 })

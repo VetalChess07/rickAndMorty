@@ -8,6 +8,12 @@ import { downloadEpisodes } from 'src/components/posts/episodes/slices/episodesS
 import { filterNewPosts } from 'src/utils/filterNewPosts';
 import EpisodesPosts from 'src/components/posts/episodes/EpisodesPosts';
 import EpisodesForm from './components/episodesForm/EpisodesForm';
+import Hero from 'src/components/hero/Hero';
+
+import mainImg from "/public/images/episides__img.png"
+
+
+
 
 const Episodes:FC = () => {
   const dispatch = useAppDispatch()
@@ -50,8 +56,9 @@ const Episodes:FC = () => {
     
 
   return (
-    <div>
+   
        <>
+       <Hero src={mainImg} alt='episodes' classes='episodes'/>
       <EpisodesForm
       setIsFilteredPosts={setIsFilteredEpisodes}
       setPostsFiltered={setEpisodesFiltered}
@@ -78,7 +85,7 @@ const Episodes:FC = () => {
      
     }
     </>
-    </div>
+  
   )
 }
 

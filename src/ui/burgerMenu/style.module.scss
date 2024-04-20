@@ -1,0 +1,20 @@
+.burger__content{
+    display: flex;
+    justify-content: center;
+    padding-top: 48px;
+    &_list{      
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        .burger__content_li{
+            display: flex;
+            justify-content: center;  
+           
+            .burger__content_link{
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 28.06px;
+            }
+        }
+    }
+}

@@ -20,7 +20,11 @@ const InputsFilterPosts:FC<InputsFilterPostsProps> = ({value,placeholder, setVal
    startDecorator={  <img src={searchImg} alt="Search" />}
    sx={{
       width: "100%",
-      maxWidth: "240px",
+      maxWidth:{
+         sm:240,
+         xs:"none",
+         
+          },
       borderRadius: '8px',
       border:"1px solid rgba(0, 0, 0, 0.38)",
       padding: '16px',
@@ -41,7 +45,10 @@ const InputsFilterPosts:FC<InputsFilterPostsProps> = ({value,placeholder, setVal
          boxShadow:"2px 2px 2px red"
         
        },
+       
+       
     }}
+   
 
     />;
     
