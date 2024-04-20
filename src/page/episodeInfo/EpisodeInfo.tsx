@@ -3,6 +3,7 @@ import { useGetEpisodeInfoQuery } from './slices/episodeInfoApi'
 
 import CardEpisodeInfo from 'src/ui/cards/cardEpisodeInfo/CardEpisodeInfo'
 import Loading from 'src/ui/loading/Loading'
+import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts'
 
 
 const EpisodeInfo = () => {
@@ -12,7 +13,7 @@ const EpisodeInfo = () => {
    <div>
    {
       error 
-      ? <h1>Error нет данных</h1>
+      ? <ErrorNotPosts status={error?.status} message={error?.data.error}/>
       :   isFetching ? (
       <Loading/>
       ) : (

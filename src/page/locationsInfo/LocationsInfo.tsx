@@ -3,6 +3,7 @@ import { useGetLocationsInfoQuery } from './slices/locationsInfoApi'
 
 import CardLocationInfo from 'src/ui/cards/cardLocationInfo/CardLocationInfo'
 import Loading from 'src/ui/loading/Loading'
+import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts'
 
 
 const LocationsInfo = () => {
@@ -11,6 +12,9 @@ const LocationsInfo = () => {
   return (
    <div>
    {
+    error
+    ? <ErrorNotPosts status={error?.status} message={error?.data.error}/>
+    :
     isFetching ? (
      <Loading/>
     ) : (

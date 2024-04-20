@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom'
 import Header from 'src/components/header/Header'
 import ButtonGoBack from 'src/ui/buttons/buttonGoBack/ButtonGoBack'
 import { arrRoutesisGoBackDisabled } from 'src/routes'
+import Footer from 'src/components/footer/Footer'
 
 
 const Layout = () => {
@@ -15,7 +16,7 @@ const Layout = () => {
       }
       <Outlet/>
      </main>
-     <footer></footer>
+     <Footer/>
     </>
   )
 }

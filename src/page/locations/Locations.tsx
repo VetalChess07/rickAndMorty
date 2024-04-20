@@ -11,7 +11,7 @@ import LocationsForm from './components/locationsForm/LocationsForm';
 import Hero from 'src/components/hero/Hero';
 
 import mainImg from "/public/images/locations__img.png"
-
+import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts';
 
 
 const Locations:FC = () => {
@@ -65,11 +65,7 @@ const Locations:FC = () => {
       />
        {
       error
-       ? <h1>упс что-то пошло не так <br />
-        <span>
-          Ошибка: {locationsError.status}
-        </span>
-        </h1>
+       ? <ErrorNotPosts status={error?.status} message={error?.data.error}/>
        : locations.length === 0
         ? <h1>У вас нет постов</h1>
         : <LocationsPosts 

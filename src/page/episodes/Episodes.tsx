@@ -12,6 +12,8 @@ import Hero from 'src/components/hero/Hero';
 
 import mainImg from "/public/images/episides__img.png"
 
+import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts';
+
 
 
 
@@ -66,11 +68,7 @@ const Episodes:FC = () => {
       />
        {
       error
-       ? <h1>упс что-то пошло не так <br />
-        <span>
-          Ошибка: {episodesError.status}
-        </span>
-        </h1>
+       ? <ErrorNotPosts status={error?.status} message={error?.data.error}/>
        : episodes.length === 0
         ? <h1>У вас нет постов</h1>
         : <EpisodesPosts 

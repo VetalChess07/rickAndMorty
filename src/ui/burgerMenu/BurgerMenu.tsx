@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { headerNavRoutes } from 'src/routes';
 import style from "./style.module.scss";
 
+import closeImg from "/public/images/close.svg"
+import menu from "/public/images/menu.svg"
+
 const BurgerMenu = () => {
   const [open, setOpen] = useState(false);
 
@@ -14,7 +17,10 @@ const BurgerMenu = () => {
 
   return (
     <div>
-      <Button onClick={toggleDrawer}>Menu</Button>
+      <Button onClick={toggleDrawer}>{open
+      ? <img src={closeImg} alt="close" />
+      : <img src={menu} alt="menu" />
+      }</Button>
       <Drawer
         anchor="bottom"
         open={open}

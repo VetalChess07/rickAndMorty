@@ -9,7 +9,8 @@ import Typography from '@mui/material/Typography';
 import { CardPostCharacterProps } from './type';
 
 const CardPostCharacter:FC<CardPostCharacterProps> = ({image, title, text}) => {
-  const isSmallScreen = useMediaQuery('(max-width:360px)');
+  const isSmallScreen = useMediaQuery('(max-width:580px)');
+  console.log(isSmallScreen)
   const cardHeight = isSmallScreen ? 232: 168;
   const cardWidth = isSmallScreen ? 312: 240;
 

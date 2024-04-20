@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import CardCharacterInfo from 'src/ui/cards/cardCharacterInfo/CardCharacterInfo'
 import { useGetCharacterInfoQuery } from './slices/characterInfoApi'
 import SkeletonCharacter from 'src/ui/skeletons/SkeletonCharacter'
+import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts'
 
 const CharacterInfo:FC = () => {
   const  {id} = useParams()
@@ -13,11 +14,14 @@ const CharacterInfo:FC = () => {
   return (
     <div>
      {
-      isFetching ? (
+      error 
+      ? <ErrorNotPosts status={error?.status} message={error?.data.error}/>
+      : isFetching ? 
+      
        <>
         <SkeletonCharacter/>
        </>
-      ) : (
+       : (
         <CardCharacterInfo data={data}/>
       )
      }

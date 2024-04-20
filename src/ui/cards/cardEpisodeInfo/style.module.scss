@@ -2,13 +2,13 @@
    width: 100%;
    height: 100%;
 }
-.locations{
+.episode{
  display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: space-between;
 gap: 64px;
-.locations__header{
+.episode__header{
 width: 100%;
 display: flex;
 flex-direction: column;
@@ -52,7 +52,7 @@ gap: 24px;
 }
 }
 }
-.locations__body{
+.episode__body{
    width: 100%;
    display: flex;
    flex-direction: column;
@@ -67,3 +67,25 @@ gap: 24px;
    }
 }
 }
+@media (max-width: 780px){
+   .episode{
+     margin-top: 40px;
+     .episode__header{
+    
+      .desc{
+       
+      
+      &__item{
+        gap: 10px;
+         &:first-child{
+            grid-area: 1 / 1 / 2 / 3;
+         }
+         &:last-child{
+            grid-area: 1 / 3 / 2 / 5;
+         }
+      }
+      }
+      }
+   }
+}
+

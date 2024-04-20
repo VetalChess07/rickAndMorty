@@ -61,7 +61,7 @@ const CharactersForm:FC<CharactersFormProps> = memo(({posts , setIsFilteredPosts
  
   return (
     <FormFilterPosts>
-      <InputsFilterPosts setValue={setName} value={name} placeholder="ffff"/>
+      <InputsFilterPosts setValue={setName} value={name} placeholder="Filter by name..."/>
     
       <SelectSort onSelectChange={onChangeSelect} placeholder='species' arrValue={arrSpeciesCharacter}/>
       <SelectSort onSelectChange={onChangeSelect} placeholder='status' arrValue={arrStatusCharacter}/>

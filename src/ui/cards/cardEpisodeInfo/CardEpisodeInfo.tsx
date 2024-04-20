@@ -17,14 +17,15 @@ import { useGetAllCharactersEpisodeQuery } from 'src/page/episodeInfo/slices/epi
 const CardEpisodeInfo:FC<CardEpisodeInfoProps> = ({data}) => {
 
    const {id, name, air_date ,episode, characters, created} = data
-   const arrCharacters = sliceData(characters)
+   const arrCharacters = sliceData(characters )
    
    const {data:charactersData, error, isFetching} = useGetAllCharactersEpisodeQuery(arrCharacters)
 
   return (
+   
   
-      <div className={style.locations}>
-         <div className={style.locations__header}>
+      <div className={style.episode}>
+         <div className={style.episode__header}>
             <h2 className={style.name}>{name}</h2>
             <div className={style.desc}>
                
@@ -38,8 +39,8 @@ const CardEpisodeInfo:FC<CardEpisodeInfoProps> = ({data}) => {
                </div>
             </div>
          </div>
-         <div className={style.locations__body}>
-         <h3 className={style.locations__body_title}>Cast</h3>
+         <div className={style.episode__body}>
+         <h3 className={style.episode__body_title}>Cast</h3>
         
         
         {

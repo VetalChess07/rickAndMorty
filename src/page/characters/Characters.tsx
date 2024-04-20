@@ -9,6 +9,7 @@ import CharactersForm from './components/CharactersForm/CharactersForm';
 import { FetchBaseQueryError } from '@reduxjs/toolkit/query/react';
 import { SerializedError } from '@reduxjs/toolkit';
 import Hero from 'src/components/hero/Hero';
+import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts';
 
 import mainImg from "/public/images/main_img.jpg"
 
@@ -27,8 +28,7 @@ const Characters:FC = () => {
   const [postsFiltered, setPostsFiltered] = useState<Character[]>([])
 
   const { data, error, isFetching } = useGetPostsQuery(page);
-  
-  
+
 
   const loadMorePosts = () => {
     dispatch(downloadCharacter(data.results))
@@ -60,25 +60,19 @@ const Characters:FC = () => {
     } 
   }, [data, characters]);
 
-
+  console.log(error?.data.error)
 
   return (
     <>
-    <Hero src={mainImg} alt='characters' classes='characters'>
-     
-    </Hero>
+    <Hero src={mainImg} alt='characters' classes='characters'/>
     <CharactersForm 
     setIsFilteredPosts={setIsFilteredPosts}
      posts={posts}
       setPostsFiltered={setPostsFiltered} 
        />
      {
-      error
-       ? <h1>упс что-то пошло не так <br />
-        <span>
-          Ошибка: {postsError.status}
-        </span>
-        </h1>
+      error 
+       ? <ErrorNotPosts status={error?.status} message={error?.data.error}/>
        : posts.length === 0
         ? <h1>У вас нет постов</h1>
         : <CharacterPosts 

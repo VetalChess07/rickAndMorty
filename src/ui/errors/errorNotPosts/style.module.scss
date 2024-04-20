@@ -1,0 +1,18 @@
+.error{
+ 
+   &__title{
+      color: red;
+   }
+   &__message{
+      display: block;
+      margin: 10px 0;
+      span{
+         color: rgba(0, 0, 0, 0.87);
+         font-weight: 700;
+      }
+   }
+   &__text{
+      font-weight: 300;
+   }
+   
+}

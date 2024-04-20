@@ -19,13 +19,13 @@
     gap: 16px;
     width: 100%;
     top: 90px;
-    background-color: transparent;
     margin-bottom: 30px;
     div:nth-child(1){
       display: flex !important;
     }
     div:last-child{
       display: block;
+      width: 100%;
     }
     div {
      display: none ;

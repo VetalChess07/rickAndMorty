@@ -36,12 +36,12 @@ const ModalFilterPosts = ({children}:{children:ReactNode}) => {
   const handleClose = () => setOpen(false);
  
    return (
-     <div>
+     <>
       
       <Button  startIcon={<img src={filterIcon} alt="Filter Icon" />}
         style={{background:"rgba(227, 242, 253, 1)", 
         padding:"10px 16px", display:"flex",
-       
+         width:"100%"
          }}
         onClick={handleOpen}>
          Open modal
@@ -79,7 +79,7 @@ const ModalFilterPosts = ({children}:{children:ReactNode}) => {
       </Modal>
  
 
-     </div>
+     </>
    );
 }
 
