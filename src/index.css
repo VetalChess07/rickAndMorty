@@ -149,6 +149,7 @@ main {
   max-width: 1020px;
   padding: 0 10px 10px 10px;
   position: relative;
+  min-height: 70dvh;
 }
 
 button {

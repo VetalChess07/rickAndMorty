@@ -1,7 +1,7 @@
 import {FC} from 'react'
 import { Route, Routes } from 'react-router-dom'
-import {publickRoutes} from "../routes"
-import Layout from '../layout/Layout'
+import {publickRoutes} from "../../routes"
+import Layout from '../../layout/Layout'
 
 
 

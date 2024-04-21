@@ -1,0 +1,22 @@
+.error{
+   height: 100%;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   gap: 20px;
+   .error__title{
+        color: red;
+   font-size: 48px;
+   }
+   .error__text{
+      color:  rgba(0, 0, 0, 0.6);
+      font-size: 24px;
+      .error__span{
+         margin-top: 20px;
+         font-size: 16px;
+         color:  rgb(0, 0, 0, );
+      }
+   }
+}
