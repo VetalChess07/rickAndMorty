@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import { CharacterPostItemProps } from './type'
-import CardPostCharacter from 'src/ui/cards/cardPostCharacter/CardPostCharacter'
+import CardPostCharacter from 'src/components/cards/cardPostCharacter/CardPostCharacter'
 
 const CharacterPostItem:FC<CharacterPostItemProps> = ({id, name, image,species}) => {
   return (

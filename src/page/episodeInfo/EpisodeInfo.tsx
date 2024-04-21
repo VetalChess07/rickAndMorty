@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useGetEpisodeInfoQuery } from './slices/episodeInfoApi'
 
-import CardEpisodeInfo from 'src/ui/cards/cardEpisodeInfo/CardEpisodeInfo'
+import CardEpisodeInfo from 'src/components/cards/cardEpisodeInfo/CardEpisodeInfo'
 import Loading from 'src/ui/loading/Loading'
 import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts'
 

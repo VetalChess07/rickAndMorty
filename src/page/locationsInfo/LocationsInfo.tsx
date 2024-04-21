@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { useGetLocationsInfoQuery } from './slices/locationsInfoApi'
 
-import CardLocationInfo from 'src/ui/cards/cardLocationInfo/CardLocationInfo'
+import CardLocationInfo from 'src/components/cards/cardLocationInfo/CardLocationInfo'
 import Loading from 'src/ui/loading/Loading'
 import ErrorNotPosts from 'src/ui/errors/errorNotPosts/ErrorNotPosts'
 
