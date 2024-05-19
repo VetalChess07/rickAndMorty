@@ -88,3 +88,98 @@ function App() {
 // }
 
 // export default App;
+
+
+
+// import React, { useState } from 'react';
+// import { FixedSizeGrid as Grid } from 'react-window';
+// import InfiniteLoader from 'react-window-infinite-loader';
+// import axios from 'axios';
+// import CardEl from './Card';
+
+// const columnCount = 4;
+
+// function App() {
+//   const [characters, setCharacters] = useState([]);
+//   const [isLoading, setIsLoading] = useState(false);
+//   const [hasMoreCharacters, setHasMoreCharacters] = useState(true);
+//   const [nextPage, setNextPage] = useState('https://rickandmortyapi.com/api/character?page=1');
+
+//   const loadMoreCharacters = async () => {
+//    console.log('fff')
+//     if (isLoading || !hasMoreCharacters) {
+//       return;
+//     }
+
+//     setIsLoading(true);
+
+//     try {
+//       const { data } = await axios.get(nextPage);
+//       const newCharacters = data.results;
+
+//       setIsLoading(false);
+//       setHasMoreCharacters(data.info.next !== null);
+//       setNextPage(data.info.next);
+//       setCharacters(prevCharacters => [...prevCharacters, ...newCharacters]);
+//     } catch (error) {
+//       console.error('Failed to load characters:', error);
+//       setIsLoading(false);
+//     }
+//   };
+
+//   const isCharacterLoaded = index => index < characters.length;
+
+//   const Cell = ({ columnIndex, rowIndex, style }) => {
+//     const itemIndex = rowIndex * columnCount + columnIndex;
+//     const item = characters[itemIndex];
+
+//     return (
+//       <div style={{ ...style, padding: '10px', boxSizing: 'border-box' }}>
+//         {item ? <CardEl id={item.id} name={item.name} img={item.image} /> : 'Loading...'}
+//       </div>
+//     );
+//   };
+
+//   // Initial load of characters if not already loading
+//   if (!isLoading && characters.length === 0 && hasMoreCharacters) {
+//     loadMoreCharacters();
+//   }
+
+//   const rowCount = Math.ceil(characters.length / columnCount);
+
+//   return (
+//     <InfiniteLoader
+//       isItemLoaded={isCharacterLoaded}
+//       itemCount={hasMoreCharacters ? characters.length + columnCount : characters.length}
+//       loadMoreItems={loadMoreCharacters}
+//     >
+//       {({ onItemsRendered, ref }) => (
+//         <Grid
+//           style={{ overflowX: 'hidden' }}
+//           className="inner"
+//           columnCount={columnCount}
+//           columnWidth={267}
+//           height={800}
+//           rowCount={rowCount}
+//           rowHeight={300}
+//           width={1068}
+//           onItemsRendered={({ visibleRowStartIndex, visibleRowStopIndex }) =>
+//             onItemsRendered({
+//               overscanStartIndex: visibleRowStartIndex * columnCount,
+//               overscanStopIndex: visibleRowStopIndex * columnCount + columnCount,
+//               visibleStartIndex: visibleRowStartIndex * columnCount,
+//               visibleStopIndex: visibleRowStopIndex * columnCount + columnCount,
+//             })
+//           }
+//           ref={ref}
+//         >
+//           {Cell}
+//         </Grid>
+//       )}
+//     </InfiniteLoader>
+//   );
+// }
+
+// export default App;
+
+
